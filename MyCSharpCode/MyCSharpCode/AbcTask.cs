@@ -1,20 +1,8 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using System.Text;
 
 namespace MyCSharpCode
 {
-    internal class Program
-    {
-        static async Task Main(string[] args)
-        {
-            int count = 200;
-            var imp = new Imp(count);
-            int[] indexs = Enumerable.Range(0, count).ToArray();
-            await imp.ExecuteAsync(indexs, indexs, indexs);
-            Console.WriteLine("完成");
-        }
-    }
-
     public class TaskItem
     {
         public int Id { get; set; }
@@ -24,6 +12,7 @@ namespace MyCSharpCode
     }
 
     public class Imp
+
     {
         const int TIMEOUT = 30_000;
         readonly object _lockObj = new object();
